@@ -117,7 +117,10 @@ if file is not None:
             scores = cross_val_score(model, X, y, cv=5)
             st.write("K-Fold Accuracy:", scores.mean())
             st.success("Model Evaluation Completed!")
-
+            st.subheader("Model Comparison (Sample)")
+            models = ["KNN", "SVM", "MLP", "Random Forest"]
+            accuracies = [0.5, 0.6, 0.55, 0.7]
+            st.bar_chart(accuracies)
         # Live Match Score
         if user_resume and user_job:
             st.subheader("Resume Matching Score", anchor=None)
